@@ -1,0 +1,27 @@
+{
+  "name": "Tom Coates - Developer",
+  "short_name": "Tom Coates",
+  "description": "Experienced developer with 25+ years in Ruby, PHP, Python, JavaScript, TypeScript, Go, and Swift—building everything from prototypes to large-scale apps.",
+  "icons": [
+    {
+      "src": "/static/favicon/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/static/favicon/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/static/favicon/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#fffbeb",
+  "background_color": "#fffbeb",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone"
+}
