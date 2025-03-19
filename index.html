@@ -7,7 +7,18 @@
   <meta name="description"
     content="Experienced developer with 25+ years in Ruby, PHP, Python, JavaScript, TypeScript, Go, and Swift—building everything from prototypes to large-scale apps.">
   <title>Tom Coates - Developer</title>
+
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', '{{TAG_MANAGER_ID}}');
+  </script>
+
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&family=Fira+Code:wght@400&display=swap");
 
@@ -68,6 +79,11 @@
 </head>
 
 <body class="text-gray-900 flex flex-col min-h-svh bg-amber-50">
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id={{TAG_MANAGER_ID}}" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe>
+  </noscript>
+
   <main class="max-w-3xl mx-auto mt-16 text-left px-6">
     <div class="flex flex-wrap space-x-0 space-y-6">
       <img src="static/me.webp" alt="Tom Coates and his wife"

@@ -24,9 +24,10 @@ jobs:
           COMMIT_HASH=$(git rev-parse --short HEAD)
           echo "COMMIT_HASH=$COMMIT_HASH" >> $GITHUB_ENV
 
-      - name: Replace commit hash in footer
+      - name: Inject placeholder tokens
         run: |
           sed -i "s|{{COMMIT_HASH}}|${{ env.COMMIT_HASH }}|g" index.html
+          sed -i "s|{{TAG_MANAGER_ID}}|${{ vars.TAG_MANAGER_ID }}|g" index.html
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
