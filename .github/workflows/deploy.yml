@@ -19,6 +19,15 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
+      - name: Get latest commit hash
+        run: |
+          COMMIT_HASH=$(git rev-parse --short HEAD)
+          echo "COMMIT_HASH=$COMMIT_HASH" >> $GITHUB_ENV
+
+      - name: Replace commit hash in footer
+        run: |
+          sed -i "s|{{COMMIT_HASH}}|${{ env.COMMIT_HASH }}|g" index.html
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
