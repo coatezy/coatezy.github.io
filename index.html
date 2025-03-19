@@ -22,6 +22,48 @@
     h3 {
       font-family: "Fira Code", monospace;
     }
+
+    @keyframes wave {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      25% {
+        transform: rotate(20deg);
+      }
+
+      50% {
+        transform: rotate(0deg);
+      }
+
+      75% {
+        transform: rotate(-20deg);
+      }
+
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+
+    .wave {
+      display: inline-block;
+      transform-origin: center;
+      transition: transform 0.4s ease-out;
+      cursor: pointer;
+    }
+
+    .wave:hover {
+      animation: wave 0.4s ease-in-out infinite;
+    }
+
+    .wave:hover::after {
+      animation-play-state: running;
+    }
+
+    .wave:not(:hover) {
+      animation: wave 0.4s ease-in-out 2;
+      animation-fill-mode: forwards;
+    }
   </style>
 </head>
 
@@ -32,7 +74,7 @@
         class="w-32 h-32 mr-6 rounded-full shadow-md border-4 border-orange-500" />
       <div>
         <h2 class="text-5xl font-extrabold text-orange-500 leading-tight">
-          Hey, I'm Tom 👋
+          Hey, I'm Tom <span class="inline-block wave">👋</span>
         </h2>
       </div>
     </div>
