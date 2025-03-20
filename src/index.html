@@ -7,12 +7,12 @@
   <meta name="description"
     content="Experienced developer with 25+ years in Ruby, PHP, Python, JavaScript, TypeScript, Go, and Swift—building everything from prototypes to large-scale apps.">
   <title>Tom Coates - Developer</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="static/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="static/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="static/favicon/favicon-16x16.png">
+  <link rel="canonical" href="https://%VITE_HOST%">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <script src="https://cdn.tailwindcss.com"></script>
   <script>(function (w, d, s, l, i) {
       w[l] = w[l] || []; w[l].push({
         'gtm.start':
@@ -20,7 +20,7 @@
       }); var f = d.getElementsByTagName(s)[0],
         j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
           'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', '{{TAG_MANAGER_ID}}');
+    })(window, document, 'script', 'dataLayer', '%VITE_TAG_MANAGER_ID%');
   </script>
 
   <script type="application/ld+json">
@@ -49,79 +49,23 @@
     }
   </script>
 
-  <style>
-    @import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&family=Fira+Code:wght@400&display=swap");
-
-    body {
-      font-family: "Merriweather", serif;
-      background-color: #faf3e0;
-      color: #333;
-    }
-
-    h1,
-    h2,
-    h3 {
-      font-family: "Fira Code", monospace;
-    }
-
-    @keyframes wave {
-      0% {
-        transform: rotate(0deg);
-      }
-
-      25% {
-        transform: rotate(20deg);
-      }
-
-      50% {
-        transform: rotate(0deg);
-      }
-
-      75% {
-        transform: rotate(-20deg);
-      }
-
-      100% {
-        transform: rotate(0deg);
-      }
-    }
-
-    .wave {
-      display: inline-block;
-      transform-origin: center;
-      transition: transform 0.4s ease-out;
-      cursor: pointer;
-    }
-
-    .wave:hover {
-      animation: wave 0.4s ease-in-out infinite;
-    }
-
-    .wave:hover::after {
-      animation-play-state: running;
-    }
-
-    .wave:not(:hover) {
-      animation: wave 0.4s ease-in-out 2;
-      animation-fill-mode: forwards;
-    }
-  </style>
+  <link href="assets/styles/main.css" rel="stylesheet">
 </head>
 
 <body class="text-gray-900 flex flex-col min-h-svh bg-amber-50">
   <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id={{TAG_MANAGER_ID}}" height="0" width="0"
+    <iframe src="https://www.googletagmanager.com/ns.html?id=%VITE_TAG_MANAGER_ID%" height="0" width="0"
       style="display:none;visibility:hidden"></iframe>
   </noscript>
 
   <main class="max-w-3xl mx-auto mt-16 text-left px-6">
-    <div class="flex flex-wrap space-x-0 space-y-6">
-      <img src="static/me.webp" alt="Tom Coates and his wife"
-        class="w-32 h-32 mr-6 rounded-full shadow-md border-4 border-orange-500" />
+    <div class="flex flex-col md:flex-row items-center md:space-x-6 text-center">
+      <img src="assets/images/me.webp" alt="Tom Coates and his wife"
+        class="w-32 h-32 rounded-full shadow-md border-4 border-orange-500" />
       <div>
-        <h2 class="text-5xl font-extrabold text-orange-500 leading-tight">
+        <h1 class="text-5xl mt-6 md:mt-0 font-extrabold text-orange-500 leading-tight">
           Hey, I'm Tom <span class="inline-block wave">👋</span>
-        </h2>
+        </h1>
       </div>
     </div>
 
@@ -133,11 +77,12 @@
     </p>
 
     <p class="text-xl mt-10 text-gray-700 leading-relaxed">
-      I’ve helped shape products for startups like <strong><a href="http://olioapp.com" rel="nofollow"
+      I’ve helped shape products for startups like <strong><a href="https://olioapp.com" rel="nofollow"
           target="_blank">OLIO</href></strong>, <strong><a href="https://www.hanzo.co" rel="nofollow"
           target="_blank">Hanzo</a></strong> and <strong><a href="https://www.bbcmaestro.com" rel="nofollow"
-          target="_blank">BBC Maestro</a></strong>, I also lend my expertise as a non-exec board member at <strong><a
-          href="https://giki.earth" rel="nofollow" target="_blank">Giki</a></strong>. Whether it’s scaling platforms,
+          target="_blank">BBC Maestro</a></strong>, where I am currently head of engineering. I also lend my expertise
+      as a non-exec board member at <strong><a href="https://giki.earth" rel="nofollow"
+          target="_blank">Giki</a></strong>. Whether it’s scaling platforms,
       optimising performance, or designing seamless user experiences, I bring a deep understanding of both code and
       business impact.
     </p>
@@ -181,8 +126,8 @@
       &copy; 2025 Tom Coates – Powered by code and coffee 🧡
     </p>
     <p class="mt-2">
-      <a href="https://github.com/coatezy/coatezy.github.io/commit/{{COMMIT_HASH}}" rel="nofollow"
-        target="_blank">{{COMMIT_HASH}}</a>
+      <a href="https://github.com/coatezy/coatezy.github.io/commit/%VITE_COMMIT_HASH%" rel="nofollow"
+        target="_blank">%VITE_COMMIT_HASH%</a>
     </p>
   </footer>
 

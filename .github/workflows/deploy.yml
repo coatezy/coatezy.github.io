@@ -15,19 +15,29 @@ jobs:
     runs-on: ubuntu-latest
     environment: production
 
+    env:
+      VITE_TAG_MANAGER_ID: ${{ vars.TAG_MANAGER_ID }}
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Get latest commit hash
+      - name: Set environment variables
         run: |
           COMMIT_HASH=$(git rev-parse --short HEAD)
-          echo "COMMIT_HASH=$COMMIT_HASH" >> $GITHUB_ENV
+          echo "VITE_COMMIT_HASH=$COMMIT_HASH" >> $GITHUB_ENV
+          echo "VITE_HOST=$(cat CNAME)" >> $GITHUB_ENV
 
-      - name: Inject placeholder tokens
-        run: |
-          sed -i "s|{{COMMIT_HASH}}|${{ env.COMMIT_HASH }}|g" index.html
-          sed -i "s|{{TAG_MANAGER_ID}}|${{ vars.TAG_MANAGER_ID }}|g" index.html
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project with Vite
+        run: npm run build
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -35,7 +45,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: ./dist
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4

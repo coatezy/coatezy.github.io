@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&family=Fira+Code:wght@400&display=swap");
+@import "tailwindcss";
+
+body {
+  font-family: "Merriweather", serif;
+  color: #333;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Fira Code", monospace;
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(20deg);
+  }
+
+  50% {
+    transform: rotate(0deg);
+  }
+
+  75% {
+    transform: rotate(-20deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.wave {
+  display: inline-block;
+  transform-origin: center;
+  transition: transform 0.4s ease-out;
+  cursor: pointer;
+  will-change: transform;
+}
+
+.wave:hover {
+  animation: wave 0.4s ease-in-out infinite;
+}
+
+.wave:hover::after {
+  animation-play-state: running;
+}
+
+.wave:not(:hover) {
+  animation: wave 0.4s ease-in-out 2;
+  animation-fill-mode: forwards;
+}
